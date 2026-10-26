@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Official WebGIS Platform and Spatial Information System for Sulthan Bathery Municipality, Wayanad, Kerala. Interactive spatial maps, demographic profiles, geography, history, and municipal ward analytics.">
+  <meta name="keywords"
+    content="Sulthan Bathery Municipality, WebGIS, Wayanad, Kerala GIS, QGIS2Web, Ward Map, Demographics, Nilgiri Biosphere, Ganapathivattam">
+  <title>Sulthan Bathery Municipality | Official WebGIS & Spatial Data Portal</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+
+  <!-- Platform Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       HEADER & GLASS NAVIGATION
+       ========================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="brand-wrapper" title="Sulthan Bathery Municipality WebGIS">
+        <div class="brand-emblem">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+            <line x1="8" y1="2" x2="8" y2="18"></line>
+            <line x1="16" y1="6" x2="16" y2="22"></line>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>SULTHAN BATHERY</h1>
+          <span>MUNICIPAL WEBGIS PORTAL • സുൽത്താൻ ബത്തേരി</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#webgis-viewport" class="nav-link">Interactive GIS</a></li>
+        <li><a href="#geography" class="nav-link">Geography</a></li>
+        <li><a href="#history" class="nav-link">History & Heritage</a></li>
+        <li><a href="#demographics" class="nav-link">Demographics & Wards</a></li>
+        <li><a href="#clean-city" class="nav-link">Clean City</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>GIS ONLINE</span>
+        </div>
+        <a href="#webgis-viewport" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+          </svg>
+          <span>Launch Map</span>
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+          &#9776;
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section class="hero-section" id="home">
+    <div class="hero-backdrop">
+      <img src="assets/hero_wayanad.jpg" alt="Wayanad highland hills and Western Ghats plateau, Kerala" />
+      <div class="photo-attribution-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+        <span>Wayanad Highland Ridge • Western Ghats</span>
+      </div>
+    </div>
+    <div class="hero-gradient-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+          <path d="M2 12h20"></path>
+        </svg>
+        <span>Official Spatial Information Infrastructure • Wayanad District, Kerala</span>
+      </div>
+
+      <h1 class="hero-title">
+        Sulthan Bathery <span class="gradient-text">Municipality</span><br>
+        Spatial WebGIS Platform
+      </h1>
+
+      <p class="hero-subtitle">
+        Empowering urban administration, environmental conservation, and citizen services through integrated Geographic
+        Information Systems (GIS). Situated in the scenic Wayanad highlands at the tri-junction of Kerala, Karnataka,
+        and Tamil Nadu.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#webgis-viewport" class="btn btn-primary" style="padding: 0.85rem 1.75rem; font-size: 1rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+            <line x1="8" y1="2" x2="8" y2="18"></line>
+            <line x1="16" y1="6" x2="16" y2="22"></line>
+          </svg>
+          Open Interactive WebGIS
+        </a>
+        <a href="#demographics" class="btn btn-secondary" style="padding: 0.85rem 1.75rem; font-size: 1rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          Explore Ward Statistics
+        </a>
+      </div>
+
+      <!-- Live Metric Counters -->
+      <div class="hero-stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">
+            <span class="counter-val" data-target="101.5" data-decimals="1">101.50</span>
+            <span class="unit">km²</span>
+          </div>
+          <div class="stat-label">Municipal Area</div>
+          <div class="stat-meta">Total Cadastral Extent</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-value">
+            <span class="counter-val" data-target="36" data-decimals="0">36</span>
+            <span class="unit">Wards</span>
+          </div>
+          <div class="stat-label">Administrative Wards</div>
+          <div class="stat-meta">Delimited Urban Governance Units</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-value">
+            <span class="counter-val" data-target="45417" data-decimals="0">45,417</span>
+            <span class="unit">People</span>
+          </div>
+          <div class="stat-label">Total Population</div>
+          <div class="stat-meta">Total Municipal Population</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-value">
+            <span class="counter-val" data-target="89.4" data-decimals="1">89.4</span>
+            <span class="unit">%</span>
+          </div>
+          <div class="stat-label">Literacy Rate</div>
+          <div class="stat-meta">Highland Literacy Index</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-value">
+            <span class="counter-val" data-target="930" data-decimals="0">930</span>
+            <span class="unit">m</span>
+          </div>
+          <div class="stat-label">Mean Elevation</div>
+          <div class="stat-meta">Wayanad Highland Plateau (MSL)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PRIMARY FEATURE: INTERACTIVE WEBGIS VIEWPORT
+       ========================================================================== -->
+  <section class="section" id="webgis-viewport" style="padding-top: 4rem;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Interactive Spatial Viewer</span>
+        <h2 class="section-title">Municipal Spatial Information System</h2>
+        <p class="section-subtitle">
+          Explore spatial layers, cadastre, municipal ward boundaries, road corridors, and environmental buffer zones
+          exported from QGIS to the Web.
+        </p>
+      </div>
+
+      <div class="gis-wrapper" id="gis-wrapper">
+        <!-- GIS Header Bar -->
+        <div class="gis-header-bar">
+          <div class="gis-title-group">
+            <div class="gis-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                <line x1="8" y1="2" x2="8" y2="18"></line>
+                <line x1="16" y1="6" x2="16" y2="22"></line>
+              </svg>
+            </div>
+            <div>
+              <h3>Sulthan Bathery WebGIS Spatial Engine</h3>
+              <div class="gis-path-display" id="gis-path-display" title="Current Map Path">
+                https://febasunil2620.github.io/WEBGIS-SULTHAN-BATHERY/
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="gis-controls-group">
+            <!-- Action buttons -->
+            <button class="btn-gis-tool" id="btn-reload" title="Refresh Map View">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+              </svg>
+              <span>Reload</span>
+            </button>
+
+            <button class="btn-gis-tool" id="btn-open-tab" title="Launch Map directly in a new browser tab">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+              <span>Open in Tab</span>
+            </button>
+
+            <button class="btn-gis-tool" id="btn-fullscreen" title="Toggle Fullscreen Mode">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"></path>
+              </svg>
+              <span>Fullscreen</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Viewport Container with iframe -->
+        <div class="gis-viewport-container">
+          <!-- The primary WebGIS iframe -->
+          <iframe id="gis-iframe" class="gis-iframe" src="https://febasunil2620.github.io/WEBGIS-SULTHAN-BATHERY/"
+            title="Sulthan Bathery WebGIS Interactive Map Viewport" allow="fullscreen; geolocation" loading="lazy">
+          </iframe>
+
+          <!-- Live Deployment Info Drawer -->
+          <div class="iframe-helper-drawer" id="helper-drawer">
+            <div class="helper-text">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              <span>
+                <strong>Live WebGIS Node:</strong> Connected to <a
+                  href="https://febasunil2620.github.io/WEBGIS-SULTHAN-BATHERY/" target="_blank"
+                  rel="noopener noreferrer"
+                  style="color: var(--emerald-400); text-decoration: underline;">febasunil2620.github.io/WEBGIS-SULTHAN-BATHERY/</a>.
+              </span>
+            </div>
+            <div class="helper-actions">
+              <button class="btn-gis-tool" onclick="window.open(currentMapSource, '_blank')">Direct Open</button>
+              <button class="btn-gis-tool"
+                onclick="document.getElementById('helper-drawer').classList.add('collapsed')">Dismiss</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       GEOGRAPHY & ENVIRONMENT SECTION
+       ========================================================================== -->
+  <section class="section" id="geography">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Physical & Spatial Geography</span>
+        <h2 class="section-title">Highland Topography & Ecological Corridors</h2>
+        <p class="section-subtitle">
+          Nestled on the Southern Deccan Plateau transition zone, surrounded by the bio-rich Western Ghats and Nilgiri
+          Biosphere Reserve.
+        </p>
+      </div>
+
+      <div class="geo-grid">
+        <!-- Feature Highlights -->
+        <div class="geo-card-group">
+          <div class="feature-box">
+            <div class="feature-box-header">
+              <div class="feature-box-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Topography & Plateau Elevation</h3>
+                <span style="font-size: 0.8rem; color: var(--emerald-400); font-family: var(--font-mono);">Mean
+                  Altitude: 900m – 1,000m Above Sea Level</span>
+              </div>
+            </div>
+            <p>
+              Sulthan Bathery is situated upon the high-altitude Wayanad plateau, where the southern reaches of the
+              Mysore Deccan tableland merge into the rugged ridges of the Western Ghats. The landscape features rolling
+              verdant valleys, gentle hillocks, terraced agricultural plantations, and prominent granite monoliths like
+              Ambukuthi Hills to the south.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box-header">
+              <div class="feature-box-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Nilgiri Biosphere & Wildlife Sanctuary</h3>
+                <span style="font-size: 0.8rem; color: var(--emerald-400); font-family: var(--font-mono);">Sulthan
+                  Bathery Forest Range & Muthanga Gateway</span>
+              </div>
+            </div>
+            <p>
+              The municipality borders the contiguous forest expanse of the <strong>Wayanad Wildlife Sanctuary</strong>,
+              an essential component of the UNESCO-designated Nilgiri Biosphere Reserve. This unbroken wilderness
+              connects seamlessly with Bandipur Tiger Reserve & Nagarhole National Park (Karnataka) and Mudumalai Tiger
+              Reserve (Tamil Nadu), forming India’s largest contiguous elephant and tiger corridor.
+            </p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box-header">
+              <div class="feature-box-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Hydrology & Kabini River Basin</h3>
+                <span style="font-size: 0.8rem; color: var(--emerald-400); font-family: var(--font-mono);">East-Flowing
+                  Highland Drainage System</span>
+              </div>
+            </div>
+            <p>
+              Unlike most of Kerala where rivers cascade westward into the Arabian Sea, the natural drainage system of
+              Sulthan Bathery feeds eastward into the tributaries of the <strong>Kabini River</strong>, a vital branch
+              of the interstate Cauvery basin. The town's micro-watersheds nourish rich coffee, pepper, tea, cardamom,
+              and paddy agro-ecosystems.
+            </p>
+          </div>
+        </div>
+
+        <!-- Directional Boundaries & Climate Card -->
+        <div>
+          <div class="boundaries-card">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+              </svg>
+              Directional Municipal Boundaries
+            </h3>
+
+            <div class="boundary-item">
+              <div class="boundary-compass">N</div>
+              <div class="boundary-info">
+                <h4>Northern Perimeter</h4>
+                <p>Bounded by Pulpally and Poothadi Grama Panchayats along highland agricultural corridors.</p>
+              </div>
+            </div>
+
+            <div class="boundary-item">
+              <div class="boundary-compass">E</div>
+              <div class="boundary-info">
+                <h4>Eastern Perimeter (Interstate Border)</h4>
+                <p>Protected forest border connecting to Bandipur (Karnataka) & Mudumalai (Tamil Nadu) via NH 766.</p>
+              </div>
+            </div>
+
+            <div class="boundary-item">
+              <div class="boundary-compass">S</div>
+              <div class="boundary-info">
+                <h4>Southern Perimeter</h4>
+                <p>Bordered by Ambalavayal, Noolpuzha, and Nenmeni Panchayats leading to the Ambukuthi hills.</p>
+              </div>
+            </div>
+
+            <div class="boundary-item">
+              <div class="boundary-compass">W</div>
+              <div class="boundary-info">
+                <h4>Western Perimeter</h4>
+                <p>Bordered by Poothadi and Muttil Panchayats towards the district capital, Kalpetta.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Climate Metrics Strip -->
+          <div class="climate-strip">
+            <div class="climate-card">
+              <div class="val">13°C – 32°C</div>
+              <div class="lbl">Temperate Climate</div>
+            </div>
+            <div class="climate-card">
+              <div class="val">2,450 mm</div>
+              <div class="lbl">Avg. Annual Rainfall</div>
+            </div>
+            <div class="climate-card">
+              <div class="val">NH 766</div>
+              <div class="lbl">Kozhikode-Kollegal Hwy</div>
+            </div>
+            <div class="climate-card">
+              <div class="val">KL-73</div>
+              <div class="lbl">Motor Vehicle Sub-Reg</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       HISTORY & HERITAGE SECTION
+       ========================================================================== -->
+  <section class="section" id="history" style="background: rgba(12, 22, 19, 0.4);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Heritage & Historical Chronicle</span>
+        <h2 class="section-title">From Ganapathivattam to Sulthan Bathery</h2>
+        <p class="section-subtitle">
+          A crossroads of prehistoric rock engravings, Vijayanagara stone architecture, Tipu Sultan’s artillery
+          garrison, and anti-colonial resistance.
+        </p>
+      </div>
+
+      <div class="history-layout">
+        <!-- Visual Presentation of Historic Temple -->
+        <div class="history-image-card">
+          <img src="assets/jain_temple_real.jpg"
+            alt="13th-century Bathery Jain Temple (Ananthanatha Swami Temple), Sulthan Bathery" />
+          <div class="history-caption">
+            <h4>Bathery Jain Temple (Ananthanatha Swami Temple)</h4>
+            <p>13th Century Vijayanagara Architecture • Artillery Depot of Tipu Sultan • Historic Monument</p>
+          </div>
+        </div>
+
+        <!-- Historical Timeline -->
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <span class="timeline-epoch">Prehistoric Era • c. 6000 BCE</span>
+            <h3 class="timeline-title">Edakkal Rock Engravings & Neolithic Settlements</h3>
+            <p class="timeline-desc">
+              Located only 12 km south of Sulthan Bathery on the Ambukuthi Mala ridge, the famous Edakkal Caves feature
+              petroglyphs and human-animal figures dating back to the Neolithic and Mesolithic periods, proving that the
+              Bathery plateau was inhabited for thousands of years.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <span class="timeline-epoch">8th – 13th Century CE</span>
+            <h3 class="timeline-title">The Era of Ganapathivattam & Jain Merchants</h3>
+            <p class="timeline-desc">
+              Originally named <strong>Ganapathivattam</strong> ("The Circle of Lord Ganesha") after an 8th-century
+              temple at the crossroads, the town flourished as a pivotal commercial hub for Jain, Tamil, and Kannada
+              merchants transporting spices, pepper, and timber between the Malabar coast and the Mysore empire. During
+              the 13th century, exquisite granite Jain basadis were constructed.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <span class="timeline-epoch">Late 18th Century (1780s – 1790s)</span>
+            <h3 class="timeline-title">Tipu Sultan's Artillery Depot ("Sultan's Battery")</h3>
+            <p class="timeline-desc">
+              During Tipu Sultan’s Malabar military campaigns against the British East India Company, his army stationed
+              their battery (artillery and gunpowder depot) inside the thick stone walls of the 13th-century Jain
+              Temple. Following the Fourth Anglo-Mysore War, British military surveyors recorded the town as
+              <em>Sultan's Battery</em>, which evolved in Malayalam to <strong>Sulthan Bathery</strong>.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <span class="timeline-epoch">1800 – 1805 CE</span>
+            <h3 class="timeline-title">Veera Pazhassi Raja's Forest Guerrilla Campaigns</h3>
+            <p class="timeline-desc">
+              The dense jungle ridges surrounding Bathery served as strategic terrain for the "Lion of Kerala", Kerala
+              Varma Pazhassi Raja, who marshaled indigenous Kurichiya and Kuruma tribal archers in a celebrated
+              five-year guerrilla campaign against British colonial forces.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <span class="timeline-epoch">Modern Era • 2015 – Present</span>
+            <h3 class="timeline-title">Municipal Upgradation & Clean City Recognition</h3>
+            <p class="timeline-desc">
+              In 2015, the Government of Kerala upgraded Sulthan Bathery from a Grama Panchayat into a full-fledged
+              Grade-III Municipality. In recent years, it has earned national acclaim as one of India's cleanest
+              municipal towns under its pioneering zero-waste pedestrian street initiative.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cultural & Ecological Landmark Gallery -->
+      <div style="margin-top: 4.5rem;">
+        <div style="text-align: center; margin-bottom: 2.25rem;">
+          <span class="section-badge" style="background: rgba(16, 185, 129, 0.2);">Landmark Gallery</span>
+          <h3 style="font-size: 1.85rem; margin-top: 0.5rem;">Spatial & Cultural Landmarks of Sulthan Bathery</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; max-width: 780px; margin: 0 auto;">
+            Prominent civic, ecological, and heritage landmarks across the municipality.
+          </p>
+        </div>
+
+        <div class="photo-gallery-grid">
+          <!-- Card 1: Municipal Building -->
+          <div class="real-photo-card">
+            <img src="assets/municipality_building.jpg"
+              alt="Sulthan Bathery Municipal Council Administrative Headquarters, Chungam" loading="lazy" />
+            <div class="real-photo-caption">
+              <h4>Sulthan Bathery Municipal Council</h4>
+              <p>Administrative headquarters in Chungam overseeing civic infrastructure, GIS land planning, and public
+                works.</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Wildlife Sanctuary -->
+          <div class="real-photo-card">
+            <img src="assets/wildlife_sanctuary.jpg"
+              alt="Asian Elephants in Wayanad Wildlife Sanctuary, Sulthan Bathery Range" loading="lazy" />
+            <div class="real-photo-caption">
+              <h4>Wayanad Wildlife Sanctuary (Sulthan Bathery Range)</h4>
+              <p>Critical Asian elephant and tiger corridor within the Nilgiri Biosphere Reserve connecting Bandipur and
+                Mudumalai.</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Edakkal Caves -->
+          <div class="real-photo-card">
+            <img src="assets/edakkal_caves.jpg"
+              alt="Prehistoric Neolithic Petroglyphs inside Edakkal Caves, Ambukuthi Mala" loading="lazy" />
+            <div class="real-photo-caption">
+              <h4>Edakkal Caves Petroglyphs (Ambukuthi Mala)</h4>
+              <p>Neolithic rock engravings (c. 6000 BCE) located 12 km south of Sulthan Bathery town.</p>
+            </div>
+          </div>
+
+          <!-- Card 4: Ancient Jain Temple -->
+          <div class="real-photo-card">
+            <img src="assets/jain_temple_real.jpg" alt="Bathery Jain Temple granite stone pillars" loading="lazy" />
+            <div class="real-photo-caption">
+              <h4>Bathery Jain Temple (Tipu's Battery)</h4>
+              <p>Granite stone pillared hall built in the 13th century, later used as an artillery storage depot by Tipu
+                Sultan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       DEMOGRAPHICS & MUNICIPAL WARDS SECTION
+       ========================================================================== -->
+  <section class="section" id="demographics">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Demographic & Administrative Profile</span>
+        <h2 class="section-title">Demographics, Communities & Ward Explorer</h2>
+        <p class="section-subtitle">
+          Comprehensive statistical indicators and administrative breakdown of Sulthan Bathery Municipality across all
+          36 delimited wards.
+        </p>
+      </div>
+
+      <!-- KPI Grid -->
+      <div class="demo-kpi-grid">
+        <div class="demo-card">
+          <div class="demo-card-head">
+            <div>
+              <div class="demo-label">Total Population</div>
+              <div class="demo-value" style="color: #6ee7b7;">45,417</div>
+            </div>
+            <div class="demo-icon">👥</div>
+          </div>
+          <div class="demo-details-list">
+            <div class="demo-row"><span>Male Population</span><span>22,342 (49.2%)</span></div>
+            <div class="demo-row"><span>Female Population</span><span>23,075 (50.8%)</span></div>
+            <div class="demo-row"><span>Sex Ratio</span><span>1,033 – 1,048 F / 1000 M</span></div>
+          </div>
+          <div class="demo-bar-track">
+            <div class="demo-bar-fill" style="width: 51%;"></div>
+          </div>
+        </div>
+
+        <div class="demo-card">
+          <div class="demo-card-head">
+            <div>
+              <div class="demo-label">Literacy Rate</div>
+              <div class="demo-value" style="color: #38bdf8;">89.4%</div>
+            </div>
+            <div class="demo-icon">🎓</div>
+          </div>
+          <div class="demo-details-list">
+            <div class="demo-row"><span>Male Literacy</span><span>92.8%</span></div>
+            <div class="demo-row"><span>Female Literacy</span><span>86.2%</span></div>
+            <div class="demo-row"><span>Total Literates</span><span>~35,800+ citizens</span></div>
+          </div>
+          <div class="demo-bar-track">
+            <div class="demo-bar-fill" style="width: 89.4%; background: linear-gradient(90deg, #38bdf8, #06b6d4);">
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-card">
+          <div class="demo-card-head">
+            <div>
+              <div class="demo-label">Households & Density</div>
+              <div class="demo-value" style="color: #fbbf24;">10,230</div>
+            </div>
+            <div class="demo-icon">🏘️</div>
+          </div>
+          <div class="demo-details-list">
+            <div class="demo-row"><span>Total Households</span><span>~10,230 Families</span></div>
+            <div class="demo-row"><span>Population Density</span><span>441 persons / km²</span></div>
+            <div class="demo-row"><span>Avg. Household Size</span><span>4.2 persons</span></div>
+          </div>
+          <div class="demo-bar-track">
+            <div class="demo-bar-fill" style="width: 70%; background: linear-gradient(90deg, #fbbf24, #f59e0b);"></div>
+          </div>
+        </div>
+
+        <div class="demo-card">
+          <div class="demo-card-head">
+            <div>
+              <div class="demo-label">Social Fabric & Tribes</div>
+              <div class="demo-value" style="color: #a855f7;">17.5%</div>
+            </div>
+            <div class="demo-icon">🌿</div>
+          </div>
+          <div class="demo-details-list">
+            <div class="demo-row"><span>Scheduled Tribes (ST)</span><span>~17.5% (Kuruma, Paniya)</span></div>
+            <div class="demo-row"><span>Scheduled Castes (SC)</span><span>~5.2%</span></div>
+            <div class="demo-row"><span>Agrarian Settlers</span><span>Hindu, Christian, Muslim</span></div>
+          </div>
+          <div class="demo-bar-track">
+            <div class="demo-bar-fill" style="width: 23%; background: linear-gradient(90deg, #a855f7, #ec4899);"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ward Explorer Module -->
+      <div class="ward-explorer">
+        <div class="ward-filter-bar">
+          <div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.2rem;">Municipal Ward Spatial Directory</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Explore all 36 delimited wards of Sulthan Bathery
+              Municipality from the official GIS survey.</p>
+          </div>
+          <input type="text" class="ward-search-input" id="ward-search"
+            placeholder="Search by ward name, landmark, or number..." aria-label="Filter wards" />
+        </div>
+
+        <div class="ward-grid" id="ward-grid">
+          <!-- Wards injected dynamically via app.js -->
+        </div>
+      </div>
+
+      <!-- Clean City Showcase -->
+      <div class="clean-city-banner" id="clean-city">
+        <div class="clean-city-content">
+          <span class="section-badge" style="background: rgba(16, 185, 129, 0.25);">National Model of Clean
+            Governance</span>
+          <h3>"Clean City Sulthan Bathery" Project</h3>
+          <p>
+            Sulthan Bathery is universally celebrated across Kerala and India as a beacon of sustainable municipal
+            cleanliness. Under its community-driven <em>Clean City Initiative</em>, the municipality eliminated open
+            garbage, enacted strict plastic ban policies, created flower-lined pedestrian pavements, installed artistic
+            wall murals, and introduced decentralized wet-dry waste management with dedicated Material Collection
+            Facilities (MCFs).
+          </p>
+        </div>
+        <div class="clean-city-features">
+          <div class="clean-pill">
+            <div class="clean-pill-val">100%</div>
+            <div class="clean-pill-lbl">Source Waste Segregation</div>
+          </div>
+          <div class="clean-pill">
+            <div class="clean-pill-val">Zero</div>
+            <div class="clean-pill-lbl">Open Garbage Dumps</div>
+          </div>
+          <div class="clean-pill">
+            <div class="clean-pill-val">36/36</div>
+            <div class="clean-pill-lbl">Wards Covered by Haritha Karma Sena</div>
+          </div>
+          <div class="clean-pill">
+            <div class="clean-pill-val">State 1st</div>
+            <div class="clean-pill-lbl">Cleanest Municipal Town in Kerala</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h2>Sulthan Bathery Municipality</h2>
+        <p style="margin-bottom: 1rem; color: #34d399; font-weight: 600;">സുൽത്താൻ ബത്തേരി നഗരസഭ • വയനാട്</p>
+        <p>
+          Official Geographic Information System & Spatial Data Infrastructure for urban management, ward governance,
+          ecological monitoring, and citizen transparency.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home Overview</a></li>
+          <li><a href="#webgis-viewport">Interactive WebGIS Map</a></li>
+          <li><a href="#geography">Geography & Plateau</a></li>
+          <li><a href="#history">Historical Chronicle</a></li>
+          <li><a href="#demographics">Wards & Demographics</a></li>
+          <li><a href="#clean-city">Clean City Initiative</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Official Municipality</h4>
+        <p style="font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.85rem;">
+          Official local government portal of Sulthan Bathery Municipality (LSGD Kerala):
+        </p>
+        <a href="https://sulthanbatherymunicipality.lsgkerala.gov.in/en" target="_blank" rel="noopener noreferrer"
+          class="btn btn-secondary"
+          style="font-size: 0.82rem; padding: 0.5rem 0.9rem; display: inline-flex; gap: 0.4rem; align-items: center; margin-bottom: 0.75rem;">
+          <span>Visit Municipality Website</span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+        <div>
+          <a href="https://sulthanbatherymunicipality.lsgkerala.gov.in/en" target="_blank" rel="noopener noreferrer"
+            style="font-size: 0.78rem; word-break: break-all; color: var(--emerald-400);">
+            sulthanbatherymunicipality.lsgkerala.gov.in/en
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Information</h4>
+        <div
+          style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1rem;">
+          <p style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.35rem;">
+            Feba Sunil
+          </p>
+          <p style="font-size: 0.86rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+            Mail ID: <a href="mailto:febasunil26@gmail.com"
+              style="color: var(--emerald-400); text-decoration: underline;">febasunil26@gmail.com</a>
+          </p>
+          <p style="font-size: 0.78rem; color: var(--text-dim); line-height: 1.4;">
+            Sulthan Bathery WebGIS Platform Development & Cartographic Integration
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-sources-bar"
+      style="margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.8rem; color: var(--text-dim); line-height: 1.6;">
+      <span style="color: var(--emerald-400); font-weight: 600;">Information & Media Sources:</span>
+      Census of India, Local Self Government Department (LSGD Kerala), Archaeological Survey of India (ASI), Kerala
+      Forest & Wildlife Department, and Wikimedia Commons.
+    </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        &copy; 2026 Sulthan Bathery Municipality WebGIS Platform.
+      </div>
+      <div>
+        Spatial Coordinate Center: 11°39′59″ N, 76°15′26″ E • Wayanad, Kerala
+      </div>
+    </div>
+  </footer>
+
+  <!-- Platform Engine -->
+  <script src="app.js"></script>
+</body>
+
+</html>
