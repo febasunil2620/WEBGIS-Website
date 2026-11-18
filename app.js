@@ -492,10 +492,6 @@ function renderWardGrid(wards) {
           <span>${w.landmark}</span>
         </div>
         <div class="ward-detail-row">
-          <span class="ward-detail-label">Surveyor:</span>
-          <span>${w.surveyor} (${w.phone})</span>
-        </div>
-        <div class="ward-detail-row">
           <span class="ward-detail-label">Population:</span>
           <span>~${w.pop.toLocaleString()} · ${w.councilor}</span>
         </div>
